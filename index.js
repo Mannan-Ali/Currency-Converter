@@ -1,4 +1,4 @@
-const Base_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_kchau2wsqrCdQEgM3cFlbKCBMYC0vVSDHeOgLNnN";
+const Base_URL = API_KEY;
 let btn = document.querySelector("form button");
 let fromCurr = document.getElementById("selectFrom");
 let toCurr = document.getElementById("selectTo");
@@ -62,7 +62,7 @@ const updateExchange= async ()=>{
         val.value = "1";
     }
  
-    const URL = `https://api.currencyapi.com/v3/latest?apikey=cur_live_kchau2wsqrCdQEgM3cFlbKCBMYC0vVSDHeOgLNnN&base_currency=${fromCurr.value}&currencies=${toCurr.value}`;
+    const URL = `${API_KEY}&base_currency=${fromCurr.value}&currencies=${toCurr.value}`;
     let response = await fetch(URL);
     
     let data = await response.json();
